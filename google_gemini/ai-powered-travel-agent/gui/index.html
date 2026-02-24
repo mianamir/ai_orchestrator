@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your AI-Powered Travel Agent</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-airplane-fill"></i> Travel Agent
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container my-5">
+        <!-- Header -->
+        <div class="text-center mb-5">
+            <h1 class="display-4">Your AI-Powered Travel Agent</h1>
+            <p class="lead">Plan smarter journeys with Google Gemini powered recommendations</p>
+        </div>
+
+        <!-- Input Tabs -->
+        <div class="card shadow-sm mb-4">
+            <div class="card-body">
+                <ul class="nav nav-tabs mb-4" id="inputTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="location-tab" data-bs-toggle="tab" 
+                                data-bs-target="#location-panel" type="button">
+                            <i class="bi bi-geo-alt-fill"></i> Search by Location
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="image-tab" data-bs-toggle="tab" 
+                                data-bs-target="#image-panel" type="button">
+                            <i class="bi bi-camera-fill"></i> Search by Image
+                        </button>
+                    </li>
+                </ul>
+
+                <div class="tab-content" id="inputTabContent">
+                    <!-- Location Search Panel -->
+                    <div class="tab-pane fade show active" id="location-panel">
+                        <form id="locationForm">
+                            <div class="mb-3">
+                                <label for="locationInput" class="form-label">Enter a Location</label>
+                                <input type="text" class="form-control" id="locationInput" 
+                                       placeholder="e.g., Paris, Tokyo, New York" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Travel Preferences (Select up to 3)</label>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input preference-check" type="checkbox" 
+                                                   value="Beach & Ocean" id="pref1">
+                                            <label class="form-check-label" for="pref1">
+                                                <i class="bi bi-water"></i> Beach & Ocean
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input preference-check" type="checkbox" 
+                                                   value="Mountains & Hiking" id="pref2">
+                                            <label class="form-check-label" for="pref2">
+                                                <i class="bi bi-mountains"></i> Mountains & Hiking
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input preference-check" type="checkbox" 
+                                                   value="Historical Sites" id="pref3">
+                                            <label class="form-check-label" for="pref3">
+                                                <i class="bi bi-building"></i> Historical Sites
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input preference-check" type="checkbox" 
+                                                   value="Food & Cuisine" id="pref4">
+                                            <label class="form-check-label" for="pref4">
+                                                <i class="bi bi-egg-fried"></i> Food & Cuisine
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input preference-check" type="checkbox" 
+                                                   value="Art & Culture" id="pref5">
+                                            <label class="form-check-label" for="pref5">
+                                                <i class="bi bi-palette-fill"></i> Art & Culture
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input preference-check" type="checkbox" 
+                                                   value="Adventure & Sports" id="pref6">
+                                            <label class="form-check-label" for="pref6">
+                                                <i class="bi bi-bicycle"></i> Adventure & Sports
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input preference-check" type="checkbox" 
+                                                   value="Wildlife & Nature" id="pref7">
+                                            <label class="form-check-label" for="pref7">
+                                                <i class="bi bi-tree-fill"></i> Wildlife & Nature
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input preference-check" type="checkbox" 
+                                                   value="Shopping & Nightlife" id="pref8">
+                                            <label class="form-check-label" for="pref8">
+                                                <i class="bi bi-bag-fill"></i> Shopping & Nightlife
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input preference-check" type="checkbox" 
+                                                   value="Relaxation & Wellness" id="pref9">
+                                            <label class="form-check-label" for="pref9">
+                                                <i class="bi bi-heart-fill"></i> Relaxation & Wellness
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">
+                                <i class="bi bi-search"></i> Get Suggestions
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Image Search Panel -->
+                    <div class="tab-pane fade" id="image-panel">
+                        <form id="imageForm">
+                            <div class="mb-3">
+                                <label for="imageInput" class="form-label">Upload a Landmark Image</label>
+                                <input type="file" class="form-control" id="imageInput" 
+                                       accept="image/*" required>
+                                <div class="form-text">Upload an image of a landmark or place you love</div>
+                            </div>
+                            
+                            <div id="imagePreview" class="mb-3 d-none">
+                                <img id="previewImg" src="" alt="Preview" class="img-thumbnail" 
+                                     style="max-width: 300px;">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Travel Preferences (Select up to 3)</label>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input image-preference-check" type="checkbox" 
+                                                   value="Beach & Ocean" id="imgPref1">
+                                            <label class="form-check-label" for="imgPref1">
+                                                <i class="bi bi-water"></i> Beach & Ocean
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input image-preference-check" type="checkbox" 
+                                                   value="Mountains & Hiking" id="imgPref2">
+                                            <label class="form-check-label" for="imgPref2">
+                                                <i class="bi bi-mountains"></i> Mountains & Hiking
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input image-preference-check" type="checkbox" 
+                                                   value="Historical Sites" id="imgPref3">
+                                            <label class="form-check-label" for="imgPref3">
+                                                <i class="bi bi-building"></i> Historical Sites
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input image-preference-check" type="checkbox" 
+                                                   value="Food & Cuisine" id="imgPref4">
+                                            <label class="form-check-label" for="imgPref4">
+                                                <i class="bi bi-egg-fried"></i> Food & Cuisine
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input image-preference-check" type="checkbox" 
+                                                   value="Art & Culture" id="imgPref5">
+                                            <label class="form-check-label" for="imgPref5">
+                                                <i class="bi bi-palette-fill"></i> Art & Culture
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input image-preference-check" type="checkbox" 
+                                                   value="Adventure & Sports" id="imgPref6">
+                                            <label class="form-check-label" for="imgPref6">
+                                                <i class="bi bi-bicycle"></i> Adventure & Sports
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input image-preference-check" type="checkbox" 
+                                                   value="Wildlife & Nature" id="imgPref7">
+                                            <label class="form-check-label" for="imgPref7">
+                                                <i class="bi bi-tree-fill"></i> Wildlife & Nature
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input image-preference-check" type="checkbox" 
+                                                   value="Shopping & Nightlife" id="imgPref8">
+                                            <label class="form-check-label" for="imgPref8">
+                                                <i class="bi bi-bag-fill"></i> Shopping & Nightlife
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input image-preference-check" type="checkbox" 
+                                                   value="Relaxation & Wellness" id="imgPref9">
+                                            <label class="form-check-label" for="imgPref9">
+                                                <i class="bi bi-heart-fill"></i> Relaxation & Wellness
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">
+                                <i class="bi bi-search"></i> Find Similar Destinations
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div id="loadingSpinner" class="text-center d-none my-4">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <p class="mt-2">Finding amazing destinations for you...</p>
+        </div>
+
+        <!-- Results Section -->
+        <div id="resultsSection" class="d-none">
+            <h2 class="mb-4">
+                <i class="bi bi-stars"></i> Travel Suggestions
+            </h2>
+            <div id="resultsContainer" class="row g-4">
+                <!-- Results will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Weather Modal -->
+    <div class="modal fade" id="weatherModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <i class="bi bi-cloud-sun"></i> Weather Information
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="weatherContent">
+                    <div class="text-center">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-light py-4 mt-5">
+        <div class="container text-center">
+            <p class="text-muted mb-0">
+                Powered by <strong>Google Gemini API</strong> | 
+                Built for learning purposes
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="app.js"></script>
+</body>
+</html>

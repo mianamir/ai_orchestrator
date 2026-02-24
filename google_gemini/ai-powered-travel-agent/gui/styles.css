@@ -1,0 +1,286 @@
+/* Custom styles for Travel Companion App */
+
+:root {
+    --primary-color: #ce42f5;
+    --secondary-color: #6c757d;
+    --success-color: #198754;
+    --info-color: #0dcaf0;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --hover-color: #a61ec4; /* Darker shade of primary for hover */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.display-4 {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.lead {
+    color: var(--secondary-color);
+}
+
+/* Card Styling */
+.card {
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Tab Styling */
+.nav-tabs .nav-link {
+    border: none;
+    color: var(--secondary-color);
+    font-weight: 500;
+    padding: 12px 20px;
+}
+
+.nav-tabs .nav-link:hover {
+    border: none;
+    color: var(--primary-color);
+}
+
+.nav-tabs .nav-link.active {
+    background-color: transparent;
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+}
+
+/* Form Styling */
+.form-control:focus,
+.form-check-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(206, 66, 245, 0.25);
+}
+
+.form-check-label {
+    cursor: pointer;
+    user-select: none;
+}
+
+.form-check-input {
+    cursor: pointer;
+}
+
+.form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Button Styling */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--hover-color);
+    border-color: var(--hover-color);
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Destination Card */
+.destination-card {
+    height: 100%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.destination-card .card-body {
+    padding: 1.5rem;
+}
+
+.destination-card .card-title {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.destination-card .badge {
+    font-size: 0.85rem;
+    padding: 0.5em 0.8em;
+}
+
+.attractions-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.attractions-list li {
+    padding: 0.3rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.attractions-list li:before {
+    content: "✈";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+/* Weather Button */
+.weather-btn {
+    width: 100%;
+    margin-top: 1rem;
+    font-weight: 500;
+}
+
+/* Budget Level Colors */
+.badge.bg-success {
+    background-color: var(--success-color) !important;
+}
+
+.badge.bg-warning {
+    background-color: var(--warning-color) !important;
+}
+
+.badge.bg-danger {
+    background-color: var(--danger-color) !important;
+}
+
+/* Weather Modal */
+.weather-info {
+    padding: 1.5rem;
+}
+
+.weather-detail {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.weather-detail:last-child {
+    border-bottom: none;
+}
+
+.weather-detail strong {
+    color: var(--primary-color);
+}
+
+.temperature-display {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-align: center;
+    margin: 1rem 0;
+}
+
+/* Image Preview */
+#imagePreview {
+    text-align: center;
+}
+
+.img-thumbnail {
+    border: 3px solid var(--primary-color);
+    border-radius: 10px;
+    padding: 0.5rem;
+}
+
+/* Loading Spinner */
+#loadingSpinner {
+    padding: 3rem 0;
+}
+
+.spinner-border.text-primary {
+    color: var(--primary-color) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .display-4 {
+        font-size: 2.5rem;
+    }
+    
+    .destination-card .card-title {
+        font-size: 1.1rem;
+    }
+    
+    .form-check-label {
+        font-size: 0.9rem;
+    }
+}
+
+/* Animation for Results */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.destination-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Stagger animation for multiple cards */
+.destination-card:nth-child(1) { animation-delay: 0.1s; }
+.destination-card:nth-child(2) { animation-delay: 0.2s; }
+.destination-card:nth-child(3) { animation-delay: 0.3s; }
+.destination-card:nth-child(4) { animation-delay: 0.4s; }
+.destination-card:nth-child(5) { animation-delay: 0.5s; }
+
+/* Footer */
+footer {
+    margin-top: auto;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--hover-color);
+}
+
+/* Navbar Override */
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
