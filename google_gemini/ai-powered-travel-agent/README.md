@@ -43,6 +43,8 @@ This project highlights a range of advanced skills in AI and full-stack developm
 -   **Pydantic**: For robust data validation and settings management.
 -   **Pillow (PIL)**: For image processing and handling.
 
+![API Documentation Screen](images/api-doc-screen.png)
+
 ### Frontend
 -   **HTML5 & CSS3**: Semantic structure and custom styling.
 -   **JavaScript (ES6+)**: Client-side logic and asynchronous API integration.
@@ -118,8 +120,6 @@ python3 -m http.server 3000
 1.  **Explore by Location**: Enter a city (e.g., "Kyoto") and select your interests (e.g., "History," "Food"). The AI will generate a tailored itinerary.
 2.  **Visual Search**: Upload a photo of a beach or mountain. The AI analyzes the visual features and suggests similar destinations worldwide.
 3.  **Real-time Insights**: When viewing a destination, the app automatically triggers a function call to fetch and display the current weather conditions.
-
-![API Documentation Screen](images/api-doc-screen.png)
 
 ## 🤝 Contributing
 
