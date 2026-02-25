@@ -1,16 +1,13 @@
 # AI Orchestrator
 
-Welcome to **AI Orchestrator**—my evolving showcase and experimentation ground for agentic AI systems and AI engineering workflows. As an AI Engineer and AgenticAI expert, I'm dedicated to mastering the orchestration of intelligent tools and APIs to create seamless, multi-model experiences. This repo is my one-stop portfolio hub, featuring hands-on projects, code demos, and a transparent log of my skill-building journey.
+**AI Orchestrator** is a showcase for Agentic AI systems and AI engineering workflows. This repository documents my journey in orchestrating intelligent tools to build multi-model experiences.
 
-From integrating cutting-edge LLMs for dynamic task automation to leveraging code assistants for rapid prototyping, I explore how these technologies can collaborate—like a symphony of AI agents reasoning, coding, and deploying in unison. Whether you're a fellow builder, recruiter, or curious explorer, dive in to see practical implementations that bridge theory and real-world impact.
+## 🧪 Playground & Experiments
+The `playground` branch is the core workspace for all my AI Engineering experiments. It serves as the base for testing new agentic workflows, rapid prototyping, and code demos.
 
-Currently, I'm focusing on learning and integrating the following tools to level up my AI engineering and AgenticAI skills:
-
-- **Google Gemini**: AI Studio (for prompt engineering), Antigravity (for lightweight deployments), API (core integrations), NotebookLM (for AI-powered note-taking and research synthesis).
-- **Claude Code**: API (for programmatic access), AgenticAI (building autonomous reasoning agents).
-- **GitHub Copilot**: AI pair-programming assistant for code completion and ideation.
-- **OpenAI ChatGPT: Codex**: Advanced code generation and understanding from natural language.
-- **Loveable**: No-code platform for building interactive AI apps with ease.
-- **Cursor**: AI-first code editor for accelerated development workflows.
-- **Replit**: Collaborative online IDE with built-in AI for real-time coding and deployment.
-
+## 🚀 Tools & Focus
+I am actively integrating and mastering:
+- **Google Gemini**: AI Studio, Antigravity, API, NotebookLM.
+- **Claude Code**: API, AgenticAI.
+- **Development Assistants**: GitHub Copilot, OpenAI Codex, Cursor.
+- **Platforms**: Loveable, Replit.
