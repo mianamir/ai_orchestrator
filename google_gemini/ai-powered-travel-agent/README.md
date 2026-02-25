@@ -1,6 +1,8 @@
 # 🌍 AI-Powered Travel Agent
 
-An intelligent, full-stack travel companion application that leverages Google's Gemini API to deliver personalized travel recommendations. This project demonstrates advanced AI engineering capabilities, including structured data generation, multimodal processing, and dynamic tool integration.
+An intelligent, full-stack travel agent application that leverages Google's Gemini API to deliver personalized travel recommendations. This project demonstrates advanced AI engineering capabilities, including structured data generation, multimodal processing, and dynamic tool integration.
+
+![GUI Home Screen](images/gui-home-screen.png)
 
 ## 🚀 Project Overview
 
@@ -116,6 +118,8 @@ python3 -m http.server 3000
 1.  **Explore by Location**: Enter a city (e.g., "Kyoto") and select your interests (e.g., "History," "Food"). The AI will generate a tailored itinerary.
 2.  **Visual Search**: Upload a photo of a beach or mountain. The AI analyzes the visual features and suggests similar destinations worldwide.
 3.  **Real-time Insights**: When viewing a destination, the app automatically triggers a function call to fetch and display the current weather conditions.
+
+![API Documentation Screen](images/api-doc-screen.png)
 
 ## 🤝 Contributing
 

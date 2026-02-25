@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your AI-Powered Travel Agent</title>
+    <title>AI-Powered Travel Agent - Explore the World</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -14,36 +19,40 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <i class="bi bi-airplane-fill"></i> Travel Agent
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <i class="bi bi-airplane-engines-fill fs-4"></i>
+                <span>Travel Agent</span>
             </a>
         </div>
     </nav>
 
+    <!-- Hero Background -->
+    <div class="hero-background"></div>
+
     <!-- Main Container -->
-    <div class="container my-5">
+    <div class="container position-relative" style="margin-top: 70px; margin-bottom: 30px;">
         <!-- Header -->
-        <div class="text-center mb-5">
-            <h1 class="display-4">Your AI-Powered Travel Agent</h1>
-            <p class="lead">Plan smarter journeys with Google Gemini powered recommendations</p>
+        <div class="text-center mb-3 text-white hero-text">
+            <h1 class="display-5 fw-bold mb-1">AI-Powered Travel Agent</h1>
+            <p class="lead fs-6 opacity-90 mb-0">Explore the World with Google Gemini Powered Recommendations</p>
         </div>
 
         <!-- Input Tabs -->
-        <div class="card shadow-sm mb-4">
-            <div class="card-body">
-                <ul class="nav nav-tabs mb-4" id="inputTabs" role="tablist">
+        <div class="card shadow-lg mb-4 glass-card border-0">
+            <div class="card-body p-3 p-md-4">
+                <ul class="nav nav-pills nav-fill mb-3 gap-2" id="inputTabs" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="location-tab" data-bs-toggle="tab" 
+                        <button class="nav-link active rounded-pill py-2" id="location-tab" data-bs-toggle="tab"
                                 data-bs-target="#location-panel" type="button">
-                            <i class="bi bi-geo-alt-fill"></i> Search by Location
+                            <i class="bi bi-geo-alt-fill me-2"></i> Search by Location
                         </button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="image-tab" data-bs-toggle="tab" 
+                        <button class="nav-link rounded-pill py-2" id="image-tab" data-bs-toggle="tab"
                                 data-bs-target="#image-panel" type="button">
-                            <i class="bi bi-camera-fill"></i> Search by Image
+                            <i class="bi bi-camera-fill me-2"></i> Search by Image
                         </button>
                     </li>
                 </ul>
@@ -53,88 +62,93 @@
                     <div class="tab-pane fade show active" id="location-panel">
                         <form id="locationForm">
                             <div class="mb-3">
-                                <label for="locationInput" class="form-label">Enter a Location</label>
-                                <input type="text" class="form-control" id="locationInput" 
-                                       placeholder="e.g., Paris, Tokyo, New York" required>
+                                <div class="input-group input-group-lg">
+                                    <span class="input-group-text bg-white border-end-0 text-primary"><i class="bi bi-search"></i></span>
+                                    <input type="text" class="form-control border-start-0 ps-0" id="locationInput"
+                                           placeholder="Enter destination (Berlin, Tokyo, New York, etc.)" required>
+                                </div>
                             </div>
                             
                             <div class="mb-3">
-                                <label class="form-label">Travel Preferences (Select up to 3)</label>
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="form-check">
-                                            <input class="form-check-input preference-check" type="checkbox" 
-                                                   value="Beach & Ocean" id="pref1">
-                                            <label class="form-check-label" for="pref1">
-                                                <i class="bi bi-water"></i> Beach & Ocean
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input preference-check" type="checkbox" 
-                                                   value="Mountains & Hiking" id="pref2">
-                                            <label class="form-check-label" for="pref2">
-                                                <i class="bi bi-mountains"></i> Mountains & Hiking
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input preference-check" type="checkbox" 
-                                                   value="Historical Sites" id="pref3">
-                                            <label class="form-check-label" for="pref3">
-                                                <i class="bi bi-building"></i> Historical Sites
+                                <label class="form-label fw-medium mb-2 small text-uppercase text-muted">Travel Style (Select up to 3)</label>
+                                <div class="row g-2">
+                                    <div class="col-6 col-md-4">
+                                        <div class="preference-card">
+                                            <input class="form-check-input preference-check" type="checkbox" value="Beach & Ocean" id="pref1">
+                                            <label class="preference-label py-2 d-flex align-items-center justify-content-center gap-2" for="pref1">
+                                                <i class="bi bi-water fs-5"></i> <span>Beach</span>
                                             </label>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
-                                        <div class="form-check">
-                                            <input class="form-check-input preference-check" type="checkbox" 
-                                                   value="Food & Cuisine" id="pref4">
-                                            <label class="form-check-label" for="pref4">
-                                                <i class="bi bi-egg-fried"></i> Food & Cuisine
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input preference-check" type="checkbox" 
-                                                   value="Art & Culture" id="pref5">
-                                            <label class="form-check-label" for="pref5">
-                                                <i class="bi bi-palette-fill"></i> Art & Culture
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input preference-check" type="checkbox" 
-                                                   value="Adventure & Sports" id="pref6">
-                                            <label class="form-check-label" for="pref6">
-                                                <i class="bi bi-bicycle"></i> Adventure & Sports
+                                    <div class="col-6 col-md-4">
+                                        <div class="preference-card">
+                                            <input class="form-check-input preference-check" type="checkbox" value="Mountains & Hiking" id="pref2">
+                                            <label class="preference-label py-2 d-flex align-items-center justify-content-center gap-2" for="pref2">
+                                                <i class="bi bi-mountains fs-5"></i> <span>Mountains</span>
                                             </label>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
-                                        <div class="form-check">
-                                            <input class="form-check-input preference-check" type="checkbox" 
-                                                   value="Wildlife & Nature" id="pref7">
-                                            <label class="form-check-label" for="pref7">
-                                                <i class="bi bi-tree-fill"></i> Wildlife & Nature
+                                    <div class="col-6 col-md-4">
+                                        <div class="preference-card">
+                                            <input class="form-check-input preference-check" type="checkbox" value="Historical Sites" id="pref3">
+                                            <label class="preference-label py-2 d-flex align-items-center justify-content-center gap-2" for="pref3">
+                                                <i class="bi bi-building fs-5"></i> <span>History</span>
                                             </label>
                                         </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input preference-check" type="checkbox" 
-                                                   value="Shopping & Nightlife" id="pref8">
-                                            <label class="form-check-label" for="pref8">
-                                                <i class="bi bi-bag-fill"></i> Shopping & Nightlife
+                                    </div>
+                                    <div class="col-6 col-md-4">
+                                        <div class="preference-card">
+                                            <input class="form-check-input preference-check" type="checkbox" value="Food & Cuisine" id="pref4">
+                                            <label class="preference-label py-2 d-flex align-items-center justify-content-center gap-2" for="pref4">
+                                                <i class="bi bi-egg-fried fs-5"></i> <span>Foodie</span>
                                             </label>
                                         </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input preference-check" type="checkbox" 
-                                                   value="Relaxation & Wellness" id="pref9">
-                                            <label class="form-check-label" for="pref9">
-                                                <i class="bi bi-heart-fill"></i> Relaxation & Wellness
+                                    </div>
+                                    <div class="col-6 col-md-4">
+                                        <div class="preference-card">
+                                            <input class="form-check-input preference-check" type="checkbox" value="Art & Culture" id="pref5">
+                                            <label class="preference-label py-2 d-flex align-items-center justify-content-center gap-2" for="pref5">
+                                                <i class="bi bi-palette-fill fs-5"></i> <span>Culture</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4">
+                                        <div class="preference-card">
+                                            <input class="form-check-input preference-check" type="checkbox" value="Adventure & Sports" id="pref6">
+                                            <label class="preference-label py-2 d-flex align-items-center justify-content-center gap-2" for="pref6">
+                                                <i class="bi bi-bicycle fs-5"></i> <span>Adventure</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4">
+                                        <div class="preference-card">
+                                            <input class="form-check-input preference-check" type="checkbox" value="Wildlife & Nature" id="pref7">
+                                            <label class="preference-label py-2 d-flex align-items-center justify-content-center gap-2" for="pref7">
+                                                <i class="bi bi-tree-fill fs-5"></i> <span>Nature</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4">
+                                        <div class="preference-card">
+                                            <input class="form-check-input preference-check" type="checkbox" value="Shopping & Nightlife" id="pref8">
+                                            <label class="preference-label py-2 d-flex align-items-center justify-content-center gap-2" for="pref8">
+                                                <i class="bi bi-bag-fill fs-5"></i> <span>Shopping</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4">
+                                        <div class="preference-card">
+                                            <input class="form-check-input preference-check" type="checkbox" value="Relaxation & Wellness" id="pref9">
+                                            <label class="preference-label py-2 d-flex align-items-center justify-content-center gap-2" for="pref9">
+                                                <i class="bi bi-heart-fill fs-5"></i> <span>Wellness</span>
                                             </label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             
-                            <button type="submit" class="btn btn-primary">
-                                <i class="bi bi-search"></i> Get Suggestions
+                            <button type="submit" class="btn btn-primary btn-lg w-100 py-2 rounded-pill fw-bold shadow-sm">
+                                <i class="bi bi-stars me-2"></i> Generate Dream Trip
                             </button>
                         </form>
                     </div>
@@ -143,94 +157,70 @@
                     <div class="tab-pane fade" id="image-panel">
                         <form id="imageForm">
                             <div class="mb-3">
-                                <label for="imageInput" class="form-label">Upload a Landmark Image</label>
-                                <input type="file" class="form-control" id="imageInput" 
-                                       accept="image/*" required>
-                                <div class="form-text">Upload an image of a landmark or place you love</div>
+                                <div class="upload-area p-3 text-center border rounded-3 bg-light position-relative">
+                                    <input type="file" class="form-control position-absolute top-0 start-0 w-100 h-100 opacity-0" id="imageInput"
+                                           accept="image/*" required style="cursor: pointer; z-index: 10;">
+                                    <i class="bi bi-cloud-upload fs-1 text-primary mb-2"></i>
+                                    <p class="mb-0 fw-medium">Upload Landmark Image</p>
+                                </div>
                             </div>
                             
-                            <div id="imagePreview" class="mb-3 d-none">
-                                <img id="previewImg" src="" alt="Preview" class="img-thumbnail" 
-                                     style="max-width: 300px;">
+                            <div id="imagePreview" class="mb-3 d-none text-center">
+                                <div class="position-relative d-inline-block">
+                                    <img id="previewImg" src="" alt="Preview" class="img-fluid rounded-3 shadow-sm"
+                                         style="max-height: 150px;">
+                                    <button type="button" class="btn btn-sm btn-danger position-absolute top-0 end-0 m-2 rounded-circle"
+                                            onclick="document.getElementById('imageInput').value=''; document.getElementById('imagePreview').classList.add('d-none');">
+                                        <i class="bi bi-x"></i>
+                                    </button>
+                                </div>
                             </div>
                             
                             <div class="mb-3">
-                                <label class="form-label">Travel Preferences (Select up to 3)</label>
-                                <div class="row">
-                                    <div class="col-md-4">
+                                <label class="form-label fw-medium mb-2 small text-uppercase text-muted">Refine Search (Optional)</label>
+                                <div class="row g-2">
+                                    <!-- Reusing preference structure for consistency -->
+                                    <div class="col-6 col-md-4">
                                         <div class="form-check">
-                                            <input class="form-check-input image-preference-check" type="checkbox" 
-                                                   value="Beach & Ocean" id="imgPref1">
-                                            <label class="form-check-label" for="imgPref1">
-                                                <i class="bi bi-water"></i> Beach & Ocean
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input image-preference-check" type="checkbox" 
-                                                   value="Mountains & Hiking" id="imgPref2">
-                                            <label class="form-check-label" for="imgPref2">
-                                                <i class="bi bi-mountains"></i> Mountains & Hiking
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input image-preference-check" type="checkbox" 
-                                                   value="Historical Sites" id="imgPref3">
-                                            <label class="form-check-label" for="imgPref3">
-                                                <i class="bi bi-building"></i> Historical Sites
-                                            </label>
+                                            <input class="form-check-input image-preference-check" type="checkbox" value="Beach & Ocean" id="imgPref1">
+                                            <label class="form-check-label" for="imgPref1">Beach</label>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-6 col-md-4">
                                         <div class="form-check">
-                                            <input class="form-check-input image-preference-check" type="checkbox" 
-                                                   value="Food & Cuisine" id="imgPref4">
-                                            <label class="form-check-label" for="imgPref4">
-                                                <i class="bi bi-egg-fried"></i> Food & Cuisine
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input image-preference-check" type="checkbox" 
-                                                   value="Art & Culture" id="imgPref5">
-                                            <label class="form-check-label" for="imgPref5">
-                                                <i class="bi bi-palette-fill"></i> Art & Culture
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input image-preference-check" type="checkbox" 
-                                                   value="Adventure & Sports" id="imgPref6">
-                                            <label class="form-check-label" for="imgPref6">
-                                                <i class="bi bi-bicycle"></i> Adventure & Sports
-                                            </label>
+                                            <input class="form-check-input image-preference-check" type="checkbox" value="Mountains & Hiking" id="imgPref2">
+                                            <label class="form-check-label" for="imgPref2">Mountains</label>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-6 col-md-4">
                                         <div class="form-check">
-                                            <input class="form-check-input image-preference-check" type="checkbox" 
-                                                   value="Wildlife & Nature" id="imgPref7">
-                                            <label class="form-check-label" for="imgPref7">
-                                                <i class="bi bi-tree-fill"></i> Wildlife & Nature
-                                            </label>
+                                            <input class="form-check-input image-preference-check" type="checkbox" value="Historical Sites" id="imgPref3">
+                                            <label class="form-check-label" for="imgPref3">History</label>
                                         </div>
+                                    </div>
+                                    <div class="col-6 col-md-4">
                                         <div class="form-check">
-                                            <input class="form-check-input image-preference-check" type="checkbox" 
-                                                   value="Shopping & Nightlife" id="imgPref8">
-                                            <label class="form-check-label" for="imgPref8">
-                                                <i class="bi bi-bag-fill"></i> Shopping & Nightlife
-                                            </label>
+                                            <input class="form-check-input image-preference-check" type="checkbox" value="Food & Cuisine" id="imgPref4">
+                                            <label class="form-check-label" for="imgPref4">Food</label>
                                         </div>
+                                    </div>
+                                    <div class="col-6 col-md-4">
                                         <div class="form-check">
-                                            <input class="form-check-input image-preference-check" type="checkbox" 
-                                                   value="Relaxation & Wellness" id="imgPref9">
-                                            <label class="form-check-label" for="imgPref9">
-                                                <i class="bi bi-heart-fill"></i> Relaxation & Wellness
-                                            </label>
+                                            <input class="form-check-input image-preference-check" type="checkbox" value="Art & Culture" id="imgPref5">
+                                            <label class="form-check-label" for="imgPref5">Culture</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input image-preference-check" type="checkbox" value="Adventure & Sports" id="imgPref6">
+                                            <label class="form-check-label" for="imgPref6">Adventure</label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             
-                            <button type="submit" class="btn btn-primary">
-                                <i class="bi bi-search"></i> Find Similar Destinations
+                            <button type="submit" class="btn btn-primary btn-lg w-100 py-2 rounded-pill fw-bold shadow-sm">
+                                <i class="bi bi-magic me-2"></i> Find Similar Destinations
                             </button>
                         </form>
                     </div>
@@ -239,17 +229,17 @@
         </div>
 
         <!-- Loading Spinner -->
-        <div id="loadingSpinner" class="text-center d-none my-4">
-            <div class="spinner-border text-primary" role="status">
+        <div id="loadingSpinner" class="text-center d-none my-5">
+            <div class="spinner-grow text-primary" role="status" style="width: 3rem; height: 3rem;">
                 <span class="visually-hidden">Loading...</span>
             </div>
-            <p class="mt-2">Finding amazing destinations for you...</p>
+            <p class="mt-3 fs-5 text-white fw-medium">Curating your perfect journey...</p>
         </div>
 
         <!-- Results Section -->
         <div id="resultsSection" class="d-none">
-            <h2 class="mb-4">
-                <i class="bi bi-stars"></i> Travel Suggestions
+            <h2 class="mb-4 text-white fw-bold">
+                <i class="bi bi-stars text-warning"></i> Curated Suggestions
             </h2>
             <div id="resultsContainer" class="row g-4">
                 <!-- Results will be dynamically inserted here -->
@@ -259,15 +249,15 @@
 
     <!-- Weather Modal -->
     <div class="modal fade" id="weatherModal" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg">
+                <div class="modal-header bg-primary text-white border-0">
                     <h5 class="modal-title">
-                        <i class="bi bi-cloud-sun"></i> Weather Information
+                        <i class="bi bi-cloud-sun-fill me-2"></i> Weather Forecast
                     </h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                 </div>
-                <div class="modal-body" id="weatherContent">
+                <div class="modal-body p-4" id="weatherContent">
                     <div class="text-center">
                         <div class="spinner-border text-primary" role="status">
                             <span class="visually-hidden">Loading...</span>
@@ -279,12 +269,13 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-light py-4 mt-5">
-        <div class="container text-center">
-            <p class="text-muted mb-0">
-                Powered by <strong>Google Gemini API</strong> | 
-                Built for learning purposes
-            </p>
+    <footer class="text-center py-4 mt-2">
+        <div class="container">
+            <div class="d-inline-block p-3 px-4 rounded-pill glass-card border-0">
+                <p class="mb-0 fw-bold text-dark">
+                    Powered by <a href="https://ai.google.dev/gemini-api/docs" target="_blank" class="text-primary text-decoration-none">Google Gemini API</a> &bull; Designed for Explorers
+                </p>
+            </div>
         </div>
     </footer>
 

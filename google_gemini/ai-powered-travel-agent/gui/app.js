@@ -165,9 +165,9 @@ function createDestinationCard(destination, index) {
                     </ul>
                 </div>
                 
-                <button class="btn btn-outline-primary weather-btn" 
+                <button class="btn btn-outline-primary weather-btn w-100 rounded-pill fw-bold"
                         onclick="getWeather('${destination.name}')">
-                    <i class="bi bi-cloud-sun"></i> Check Weather
+                    <i class="bi bi-cloud-sun me-2"></i> Check Weather
                 </button>
             </div>
         </div>
@@ -380,4 +380,3 @@ async function getWeather(destination) {
     }
 
 }
-
